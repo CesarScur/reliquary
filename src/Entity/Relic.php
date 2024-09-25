@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RelicRepository;
+use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RelicRepository::class)]
@@ -19,6 +20,10 @@ class Relic
 
     #[ORM\Column(length: 255)]
     private ?string $location = null;
+
+    #[ORM\ManyToOne(inversedBy: 'relics')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $creator = null;
 
     public function getId(): ?int
     {
@@ -45,6 +50,18 @@ class Relic
     public function setLocation(string $location): static
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    public function getCreator(): ?User
+    {
+        return $this->creator;
+    }
+
+    public function setCreator(?User $creator): static
+    {
+        $this->creator = $creator;
 
         return $this;
     }
