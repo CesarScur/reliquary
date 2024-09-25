@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saint index{% endblock %}
+
+{% block body %}
+    <h1>Saint index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for saint in saints %}
+            <tr>
+                <td>{{ saint.id }}</td>
+                <td>{{ saint.name }}</td>
+                <td>
+                    <a href="{{ path('app_saint_show', {'id': saint.id}) }}">show</a>
+                    <a href="{{ path('app_saint_edit', {'id': saint.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_saint_new') }}">Create new</a>
+{% endblock %}

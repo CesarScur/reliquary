@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Relic{% endblock %}
+
+{% block body %}
+    <h1>Relic</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ relic.id }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ relic.location }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_relic_index') }}">back to list</a>
+
+    <a href="{{ path('app_relic_edit', {'id': relic.id}) }}">edit</a>
+
+    {{ include('relic/_delete_form.html.twig') }}
+{% endblock %}

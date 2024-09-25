@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Relic{% endblock %}
+
+{% block body %}
+    <h1>Create new Relic</h1>
+
+    {{ include('relic/_form.html.twig') }}
+
+    <a href="{{ path('app_relic_index') }}">back to list</a>
+{% endblock %}

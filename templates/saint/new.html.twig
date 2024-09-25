@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Saint{% endblock %}
+
+{% block body %}
+    <h1>Create new Saint</h1>
+
+    {{ include('saint/_form.html.twig') }}
+
+    <a href="{{ path('app_saint_index') }}">back to list</a>
+{% endblock %}

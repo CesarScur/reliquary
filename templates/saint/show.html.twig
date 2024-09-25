@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saint{% endblock %}
+
+{% block body %}
+    <h1>Saint</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ saint.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ saint.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_saint_index') }}">back to list</a>
+
+    <a href="{{ path('app_saint_edit', {'id': saint.id}) }}">edit</a>
+
+    {{ include('saint/_delete_form.html.twig') }}
+{% endblock %}
