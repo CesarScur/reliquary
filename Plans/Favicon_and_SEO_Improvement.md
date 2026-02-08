@@ -44,18 +44,18 @@ Update the `<head>` section to include all relevant relations.
 
 ## 3. Implementation Steps
 
-1.  **Modify `public/robots.txt`**:
-    - Remove `Disallow: /` and replace with `Allow: /`.
-2.  **Generate Assets**:
-    - Use `assets/images/relic.png` as the source to generate the various sizes.
-    - Place generated files in `public/` (or manage via AssetMapper if preferred, but root-level files are better for crawler discovery).
-3.  **Create `public/site.webmanifest`**:
-    - Define app name, icons, and theme colors.
-4.  **Update `templates/base.html.twig`**:
-    - Replace the current single icon link with the comprehensive list.
-5.  **Verification**:
-    - Use Google Search Console (if available) to request a re-crawl.
-    - Verify that `https://santasreliquias.com.br/favicon.ico` is accessible.
+1.  [x] **Modify `public/robots.txt`**:
+    - [x] Remove `Disallow: /` and replace with `Allow: /`.
+2.  [ ] **Generate Assets**:
+    - [ ] Use `assets/images/relic.png` as the source to generate the various sizes.
+    - [ ] Place generated files in `public/` (or manage via AssetMapper if preferred, but root-level files are better for crawler discovery).
+3.  [x] **Create `public/site.webmanifest`**:
+    - [x] Define app name, icons, and theme colors.
+4.  [x] **Update `templates/base.html.twig`** (now `templates/landing_base.html.twig`):
+    - [x] Replace the current single icon link with the comprehensive list.
+5.  [ ] **Verification**:
+    - [ ] Use Google Search Console (if available) to request a re-crawl.
+    - [ ] Verify that `https://santasreliquias.com.br/favicon.ico` is accessible.
 
 ## 4. Google's Specific Requirements Checklist
 - [ ] Favicon is a multiple of 48px square.

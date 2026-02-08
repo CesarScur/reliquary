@@ -18,34 +18,34 @@
 ## Migration Steps
 
 ### Step 1: Migrate `relic/resubmit.html.twig`
-- [ ] Change `{% extends 'base.html.twig' %}` to `{% extends 'landing_base.html.twig' %}`
-- [ ] Verify block names match (`body`, `title`, etc.)
+- [x] Change `{% extends 'base.html.twig' %}` to `{% extends 'landing_base.html.twig' %}`
+- [x] Verify block names match (`body`, `title`, etc.)
 - [ ] Test the page functionality (manually - ask user/dev)
 
 ### Step 2: Move `saint/new.html.twig` to Admin
-- [ ] Move file to `templates/admin/saints/new.html.twig`
-- [ ] Change extends to `admin_base.html.twig`
-- [ ] Update controller route/render path
-- [ ] Add admin role protection if not present
+- [x] Move file to `templates/admin/saints/new.html.twig`
+- [x] Change extends to `admin_base.html.twig`
+- [x] Update controller route/render path
+- [x] Add admin role protection if not present
 - [ ] Test form submission (manually – ask user/dev)
 
 ### Step 3: Move `saint/edit.html.twig` to Admin
-- [ ] Move file to `templates/admin/saints/edit.html.twig`
-- [ ] Change extends to `admin_base.html.twig`
-- [ ] Update controller route/render path
-- [ ] Add admin role protection if not present
+- [x] Move file to `templates/admin/saints/edit.html.twig`
+- [x] Change extends to `admin_base.html.twig`
+- [x] Update controller route/render path
+- [x] Add admin role protection if not present
 - [ ] Test form functionality
 
 ### Step 4: Delete `home/index.html.twig`
-- [ ] Remove the template file
-- [ ] Remove or update any route pointing to it in controllers
-- [ ] Verify landing page (`home/landing.html.twig`) is the active home
+- [x] Remove the template file
+- [x] Remove or update any route pointing to it in controllers
+- [x] Verify landing page (`home/landing.html.twig`) is the active home
 
 ### Step 5: Delete `base.html.twig`
-- [ ] Remove the file from the repository
+- [x] Remove the file from the repository
 
 ### Step 6: Cleanup
-- [ ] Search for any remaining references to `base.html.twig` in the codebase
+- [x] Search for any remaining references to `base.html.twig` in the codebase
 - [ ] Update any documentation mentioning the old base template
 - [ ] Remove unused assets/styles specific to old base if any
 

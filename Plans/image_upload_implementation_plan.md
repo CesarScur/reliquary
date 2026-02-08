@@ -16,99 +16,28 @@ This implementation plan outlines the steps needed to add image upload functiona
 ## Implementation Steps
 
 ### 1. Create Image Entity
-
-Create a dedicated Image entity to handle all image-related data:
-
-```php
-// src/Entity/Image.php
-namespace App\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-
-#[ORM\Entity]
-class Image
-{
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-    
-    #[ORM\Column(length: 255)]
-    private string $filename;
-    
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $originalFilename = null;
-    
-    #[ORM\Column(length: 255)]
-    private string $mimeType;
-    
-    #[ORM\Column]
-    private int $size;
-    
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(onDelete: 'CASCADE')]
-    private ?object $owner = null;
-    
-    #[ORM\Column(length: 50)]
-    private string $ownerType; // 'relic' or 'saint'
-    
-    // Getters and setters
-}
-```
+- [x] Create a dedicated AbstractImage and specific RelicImage/SaintImage entities.
 
 ### 2. Update Relic and Saint Entities
-
-Add relationships to the Image entity:
-
-```php
-// In Relic.php
-/**
- * @var Collection<int, Image>
- */
-#[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'owner', cascade: ['persist', 'remove'])]
-private Collection $images;
-
-public function __construct()
-{
-    $this->images = new ArrayCollection();
-}
-
-// Add methods to manage images
-```
-
-```php
-// In Saint.php
-/**
- * @var Collection<int, Image>
- */
-#[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'owner', cascade: ['persist', 'remove'])]
-private Collection $images;
-
-// Add methods to manage images
-```
+- [x] Add relationships to the Image entities.
 
 ### 3. Create ImageService
+- [x] Implement a service to handle image uploads, storage, and retrieval.
 
-Implement a service to handle image uploads, storage, and retrieval:
+### 4. Create Twig Extension/Helper
+- [x] Create a Twig helper to generate image URLs.
 
-```php
-// src/Service/ImageService.php
-namespace App\Service;
+### 5. Update Forms
+- [x] Add image upload fields to Relic and Saint forms.
 
-use App\Entity\Image;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\String\Slugger\SluggerInterface;
+### 6. Update Controllers
+- [x] Update controllers to handle image uploads during creation and editing.
 
-class ImageService
-{
-    private string $uploadDir;
-    private SluggerInterface $slugger;
-    
-    public function __construct(string $uploadDir, SluggerInterface $slugger)
-    {
-        $this->uploadDir = $uploadDir;
-        $this->slugger = $slugger;
-    }
+### 7. Update Templates
+- [x] Update templates to display images and provide upload/delete functionality.
+
+### 8. Thumbnails Generation
+- [x] Implement a command to generate thumbnails for uploaded images.
     
     public function createFromUploadedFile(UploadedFile $file, object $owner, string $ownerType): Image
     {

@@ -26,7 +26,7 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 ## Implementation Steps
 
 ### Step 1: Add SEO Meta Blocks to `landing_base.html.twig`
-- [ ] Add after line 6 (after `<title>`):
+- [x] Add after line 6 (after `<title>`):
 ```twig
 {% block meta_description %}<meta name="description" content="{{ 'meta.description'|trans({}, 'landing') }}">{% endblock %}
 {% block meta_robots %}<meta name="robots" content="index, follow">{% endblock %}
@@ -34,7 +34,7 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 ```
 
 ### Step 2: Add Open Graph Tags
-- [ ] Add Open Graph meta tags:
+- [x] Add Open Graph meta tags:
 ```twig
 {% block og_tags %}
 <meta property="og:title" content="{% block og_title %}{{ block('title') }}{% endblock %}">
@@ -48,7 +48,7 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 ```
 
 ### Step 3: Add Twitter Card Tags
-- [ ] Add Twitter Card meta tags:
+- [x] Add Twitter Card meta tags:
 ```twig
 {% block twitter_tags %}
 <meta name="twitter:card" content="summary_large_image">
@@ -59,7 +59,7 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 ```
 
 ### Step 4: Add Structured Data Block
-- [ ] Add JSON-LD structured data with SearchAction and SiteNavigationElement for sitelinks:
+- [x] Add JSON-LD structured data with SearchAction and SiteNavigationElement for sitelinks:
 ```twig
 {% block structured_data %}
 <script type="application/ld+json">
@@ -92,13 +92,13 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 ```
 
 ### Step 5: Add Hreflang Tags Block
-- [ ] Add hreflang block for multilingual support:
+- [x] Add hreflang block for multilingual support:
 ```twig
 {% block hreflang %}{% endblock %}
 ```
 
 ### Step 6: Add Translations
-- [ ] Add to `translations/landing.en.yaml`:
+- [x] Add to `translations/landing.en.yaml`:
 ```yaml
 meta:
     description: "Discover and explore religious relics and saints from around the world. A comprehensive database of sacred artifacts and their histories."
@@ -106,7 +106,7 @@ meta:
 - [ ] Add translations for other supported languages (pt, es, it, etc.)
 
 ### Step 7: Override SEO in Child Templates
-- [ ] Update `relic/show.html.twig`:
+- [x] Update `relic/show.html.twig`:
 ```twig
 {% block meta_description %}<meta name="description" content="{{ relic.description|slice(0, 160) }}">{% endblock %}
 {% block og_title %}{{ relic.name }} - Reliquary{% endblock %}
@@ -127,7 +127,7 @@ meta:
 - [ ] Update `saint/show.html.twig` with similar overrides
 
 ### Step 8: Create/Update `robots.txt` and `sitemap.xml`
-- [ ] Ensure `public/robots.txt` exists with proper directives
+- [x] Ensure `public/robots.txt` exists with proper directives
 - [ ] Consider adding a sitemap generator command or bundle (e.g., `presta/sitemap-bundle`)
 
 ---
