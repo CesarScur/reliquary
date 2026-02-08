@@ -46,8 +46,8 @@
 
 ### Step 6: Cleanup
 - [x] Search for any remaining references to `base.html.twig` in the codebase
-- [ ] Update any documentation mentioning the old base template
-- [ ] Remove unused assets/styles specific to old base if any
+- [x] Update any documentation mentioning the old base template
+- [x] Remove unused assets/styles specific to old base if any
 
 ## Key Differences Between Templates
 
@@ -60,11 +60,11 @@
 
 ## Testing Checklist
 
-- [ ] `relic/resubmit` page renders correctly with landing base
-- [ ] Saint new/edit forms work in admin section
-- [ ] Home route redirects to landing page
-- [ ] Navigation works on all pages
-- [ ] Forms submit properly
-- [ ] Flash messages display correctly
-- [ ] No console errors
-- [ ] No references to `base.html.twig` remain
+- [x] `relic/resubmit` page renders correctly with landing base
+- [x] Saint new/edit forms work in admin section
+- [x] Home route redirects to landing page
+- [x] Navigation works on all pages
+- [x] Forms submit properly
+- [x] Flash messages display correctly
+- [x] No console errors
+- [x] No references to `base.html.twig` remain

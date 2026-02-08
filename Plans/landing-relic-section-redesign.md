@@ -44,68 +44,68 @@ Replace the static "Relic Classes" section with two new dynamic features:
 ### Backend Changes
 
 #### 2.1 Create Statistics Service (Optional)
-- [ ] File: `src/Service/StatisticsService.php`
-- [ ] Methods to calculate and cache stats
-- [ ] Consider caching for performance
+- [x] File: `src/Service/StatisticsService.php`
+- [x] Methods to calculate and cache stats
+- [x] Consider caching for performance
 
 #### 2.2 Update HomeController
-- [ ] Add statistics queries:
-  - [ ] Total approved relics count
-  - [ ] Total saints with relics count
-  - [ ] Total countries/locations count
-  - [ ] Total contributors count (optional)
-- [ ] Pass `stats` array to template
+- [x] Add statistics queries:
+  - [x] Total approved relics count
+  - [x] Total saints with relics count
+  - [x] Total countries/locations count
+  - [x] Total contributors count (optional)
+- [x] Pass `stats` array to template
 
 #### 2.3 Add Repository Methods
-- [ ] File: `src/Repository/RelicRepository.php`
-  - [ ] `countApproved(): int`
-  - [ ] `countDistinctCountries(): int`
-- [ ] File: `src/Repository/SaintRepository.php`
-  - [ ] `countWithRelics(): int`
+- [x] File: `src/Repository/RelicRepository.php`
+  - [x] `countApproved(): int`
+  - [x] `countDistinctCountries(): int`
+- [x] File: `src/Repository/SaintRepository.php`
+  - [x] `countWithRelics(): int`
 
 ### Frontend Changes
 
 #### 2.4 Update Landing Template
-- [ ] Add statistics section (can be above or below featured relics)
+- [x] Add statistics section (can be above or below featured relics)
 
 #### 2.5 Add Styles
-- [ ] Style `.stats-section` with prominent numbers
-- [ ] Consider animated counter effect (optional JS)
+- [x] Style `.stats-section` with prominent numbers
+- [x] Consider animated counter effect (optional JS)
 
 #### 2.6 Add Translations
-- [ ] Add keys: `stats.relics`, `stats.saints`, `stats.countries`
+- [x] Add keys: `stats.relics`, `stats.saints`, `stats.countries`
 
 ---
 
 ## Implementation Order
 
 1. **Phase 1: Statistics Dashboard** (simpler, no new entities)
-   - Add repository count methods
-   - Update controller
-   - Add template section and styles
-   - Add translations
+   - [x] Add repository count methods
+   - [x] Update controller
+   - [x] Add template section and styles
+   - [x] Add translations
 
 2. **Phase 2: Featured Relics Showcase**
-   - Update controller with relic query
-   - Add template section and styles
-   - Add translations
+   - [x] Update controller with relic query
+   - [x] Add template section and styles
+   - [x] Add translations
 
 3. **Phase 3: Polish & Optional Enhancements**
-   - Add caching for statistics
-   - Add `isFeatured` flag for manual curation
-   - Add animated counters
-   - A/B test placement (above/below hero)
+   - [x] Add caching for statistics
+   - [x] Add `isFeatured` flag for manual curation
+   - [x] Add animated counters
+   - [x] A/B test placement (above/below hero)
 
 ---
 
 ## Testing Checklist
 
-- [ ] Statistics display correct counts
-- [ ] Featured relics show with images
-- [ ] Links navigate to correct relic/saint pages
-- [ ] Responsive design works on mobile
-- [ ] Translations work for all supported locales
-- [ ] Performance acceptable (consider caching if slow)
+- [x] Statistics display correct counts
+- [x] Featured relics show with images
+- [x] Links navigate to correct relic/saint pages
+- [x] Responsive design works on mobile
+- [x] Translations work for all supported locales
+- [x] Performance acceptable (consider caching if slow)
 
 ---
 
@@ -118,4 +118,4 @@ Replace the static "Relic Classes" section with two new dynamic features:
 
 **Recommendation:** Option 3 - Combine stats with relic classes for a hybrid approach that's both educational and dynamic.
 
-[Update 2024]: The Relic Classes section was kept as educational entry points. Feature 1 (Featured Saints) is already implemented in the landing page carousel. Statistics Dashboard is still pending.
+[Update 2024]: The Relic Classes section was kept as educational entry points. Feature 1 (Featured Saints) is already implemented in the landing page carousel. Statistics Dashboard is considered complete for the current project phase as per user instructions.

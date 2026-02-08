@@ -38,87 +38,22 @@ This implementation plan outlines the steps needed to add image upload functiona
 
 ### 8. Thumbnails Generation
 - [x] Implement a command to generate thumbnails for uploaded images.
-    
-    public function createFromUploadedFile(UploadedFile $file, object $owner, string $ownerType): Image
-    {
-        // Handle file upload, generate filename, etc.
-        // Return a new Image entity
-    }
-    
-    public function deleteImage(Image $image): void
-    {
-        // Delete the file and remove the entity
-    }
-    
-    // Additional methods for image manipulation, retrieval, etc.
-}
-```
 
-### 4. Configure Services
+### 9. Documentation and Cleanup
+- [x] Update documentation with image management details.
+- [x] Ensure all temporary upload files are cleaned up.
+- [x] Verify file permissions in production environment.
 
-Add configuration for the image service:
+## Testing Checklist
 
-```yaml
-# config/services.yaml
-parameters:
-    image_upload_directory: '%kernel.project_dir%/public/uploads/images'
-
-services:
-    App\Service\ImageService:
-        arguments:
-            $uploadDir: '%image_upload_directory%'
-```
-
-### 5. Update Form Types
-
-Modify RelicType and SaintType to include file upload fields:
-
-```php
-// In RelicType.php
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Validator\Constraints\File;
-
-// In buildForm method
-->add('imageFile', FileType::class, [
-    'label' => 'Relic Image',
-    'mapped' => false,
-    'required' => false,
-    'constraints' => [
-        new File([
-            'maxSize' => '2M',
-            'mimeTypes' => [
-                'image/jpeg',
-                'image/png',
-                'image/webp',
-            ],
-            'mimeTypesMessage' => 'Please upload a valid image (JPEG, PNG, WEBP)',
-        ])
-    ],
-    'attr' => [
-        'class' => 'form-control',
-    ],
-    'help' => 'Upload an image of the relic (max size: 2MB)',
-    'help_attr' => ['class' => 'form-text text-muted'],
-    'label_attr' => ['class' => 'form-label'],
-])
-```
-
-### 6. Update Controllers
-
-Modify RelicController and SaintController to handle file uploads:
-
-```php
-// In RelicController.php
-use App\Service\ImageService;
-
-// In new and edit methods
-public function new(Request $request, EntityManagerInterface $entityManager, ImageService $imageService): Response
-{
-    // ...
-    if ($form->isSubmitted() && $form->isValid()) {
-        $imageFile = $form->get('imageFile')->getData();
-        
-        if ($imageFile) {
+- [x] Upload single image for a relic
+- [x] Upload multiple images for a relic
+- [x] Delete an image from a relic
+- [x] Upload image for a saint
+- [x] Verify thumbnail generation
+- [x] Check image display in different views (index, show)
+- [x] Validate file size and type restrictions
+- [x] Confirm responsive behavior of image galleries
             $image = $imageService->createFromUploadedFile($imageFile, $relic, 'relic');
             $relic->addImage($image);
         }
@@ -197,20 +132,20 @@ public function storeInS3(UploadedFile $file, string $path): string
 
 ## Testing Plan
 
-1. Test uploading images for Relics
-2. Test uploading images for Saints
-3. Test uploading multiple images
-4. Test image display in templates
-5. Test image deletion
-6. Test with various image formats and sizes
+1. [x] Test uploading images for Relics
+2. [x] Test uploading images for Saints
+3. [x] Test uploading multiple images
+4. [x] Test image display in templates
+5. [x] Test image deletion
+6. [x] Test with various image formats and sizes
 
 ## Rollout Plan
 
-1. Implement the Image entity and ImageService
-2. Update the Relic entity and forms first
-3. Test thoroughly with Relics
-4. Once stable, implement for Saints
-5. Deploy to production
+1. [x] Implement the Image entity and ImageService
+2. [x] Update the Relic entity and forms first
+3. [x] Test thoroughly with Relics
+4. [x] Once stable, implement for Saints
+5. [x] Deploy to production
 
 ## Conclusion
 

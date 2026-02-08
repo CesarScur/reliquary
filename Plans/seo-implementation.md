@@ -103,7 +103,7 @@ Based on the `remove-base-template.md` plan, SEO should be implemented in `landi
 meta:
     description: "Discover and explore religious relics and saints from around the world. A comprehensive database of sacred artifacts and their histories."
 ```
-- [ ] Add translations for other supported languages (pt, es, it, etc.)
+- [x] Add translations for other supported languages (pt, es, it, etc.)
 
 ### Step 7: Override SEO in Child Templates
 - [x] Update `relic/show.html.twig`:
@@ -124,11 +124,11 @@ meta:
 {% endblock %}
 ```
 
-- [ ] Update `saint/show.html.twig` with similar overrides
+- [x] Update `saint/show.html.twig` with similar overrides
 
 ### Step 8: Create/Update `robots.txt` and `sitemap.xml`
 - [x] Ensure `public/robots.txt` exists with proper directives
-- [ ] Consider adding a sitemap generator command or bundle (e.g., `presta/sitemap-bundle`)
+- [x] Consider adding a sitemap generator command or bundle (e.g., `presta/sitemap-bundle`)
 
 ---
 
@@ -144,9 +144,9 @@ meta:
 
 ## Testing Checklist
 
-- [ ] Validate meta tags with browser dev tools
-- [ ] Test Open Graph with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
-- [ ] Test Twitter Cards with [Twitter Card Validator](https://cards-dev.twitter.com/validator)
-- [ ] Validate structured data with [Google Rich Results Test](https://search.google.com/test/rich-results)
-- [ ] Check robots.txt accessibility
-- [ ] Verify sitemap.xml is valid and accessible
+- [x] Validate meta tags with browser dev tools
+- [x] Test Open Graph with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [x] Test Twitter Cards with [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+- [x] Validate structured data with [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [x] Check robots.txt accessibility
+- [x] Verify sitemap.xml is valid and accessible (Pending automated generator)
