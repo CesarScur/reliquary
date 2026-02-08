@@ -25,6 +25,10 @@ hero:
 classes:
   title: 'Classes de Relíquias'
   subtitle: 'Compreendendo a Hierarquia Sagrada de Veneração'
+  stats:
+    relics: 'Relíquias Sagradas'
+    saints: 'Santos Venerados'
+    locations: 'Locais Globais'
   first:
     title: 'Relíquias de Primeira Classe'
     description: 'Restos físicos de santos incluindo ossos, cabelos e sangue. Estas relíquias mais preciosas proporcionam a conexão física mais próxima à pessoa santa.'

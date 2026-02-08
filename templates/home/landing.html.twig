@@ -27,10 +27,46 @@
         <div class="scroll-indicator"></div>
     </section>
 
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="statistics-container">
+            <div class="statistics-grid" data-controller="stats-counter">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-stats-counter-target="value" data-value="{{ stats.total_relics }}">0</span>
+                        <span class="stat-label">{{ 'stats.relics'|trans({}, 'landing') }}</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-stats-counter-target="value" data-value="{{ stats.total_saints }}">0</span>
+                        <span class="stat-label">{{ 'stats.saints'|trans({}, 'landing') }}</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-stats-counter-target="value" data-value="{{ stats.total_locations }}">0</span>
+                        <span class="stat-label">{{ 'stats.locations'|trans({}, 'landing') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Relic Classes Section -->
     <section class="relic-classes">
         <h2 class="section-title">{{ 'classes.title'|trans({}, 'landing') }}</h2>
         <p class="section-subtitle">{{ 'classes.subtitle'|trans({}, 'landing') }}</p>
+
         <div class="classes-grid">
             <a href="{{ path('app_relic_index', {'filter': 'first-class'}) }}" class="relic-card">
                 <span class="relic-icon">⊕</span>

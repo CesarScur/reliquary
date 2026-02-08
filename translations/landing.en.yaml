@@ -25,6 +25,10 @@ hero:
 classes:
   title: 'Classes of Relics'
   subtitle: 'Understanding the Sacred Hierarchy of Veneration'
+  stats:
+    relics: 'Sacred Relics'
+    saints: 'Holy Saints'
+    locations: 'Global Locations'
   first:
     title: 'First-Class Relics'
     description: 'Physical remains of saints including bones, hair, and blood. These most precious relics provide the closest physical connection to the holy person.'

@@ -12,6 +12,118 @@
     --warning-amber: #d97706;
 }
 
+/* Statistics Section */
+.statistics-section {
+    padding: 0;
+    margin-top: -50px; /* Overlap with hero slightly for better integration */
+    position: relative;
+    z-index: 10;
+}
+
+.statistics-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background: rgba(30, 58, 138, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--sacred-white);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--light-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .statistics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .statistics-section {
+        margin-top: 0;
+        padding: 3rem 0;
+    }
+    
+    .statistics-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        padding: 0;
+    }
+    
+    .stat-card {
+        background: rgba(30, 58, 138, 0.6);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
