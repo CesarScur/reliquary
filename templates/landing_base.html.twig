@@ -17,14 +17,17 @@
     <meta property="og:image" content="{% block og_image %}{{ absolute_url(asset('/images/relic.png')) }}{% endblock %}">
     <meta property="og:site_name" content="Reliquary">
     <meta property="og:locale" content="{{ app.request.locale }}">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
     {% endblock %}
 
-    {% block twitter_tags %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ block('og_title') }}">
-    <meta name="twitter:description" content="{{ block('og_description') }}">
-    <meta name="twitter:image" content="{{ block('og_image') }}">
-    {% endblock %}
+{#    {% block twitter_tags %}#}
+{#    <meta name="twitter:card" content="summary_large_image">#}
+{#    <meta name="twitter:title" content="{{ block('og_title') }}">#}
+{#    <meta name="twitter:description" content="{{ block('og_description') }}">#}
+{#    <meta name="twitter:image" content="{{ block('og_image') }}">#}
+{#    <meta name="twitter:site" content="@reliquary_proj">#}
+{#    {% endblock %}#}
 
     {% block structured_data %}
     <script type="application/ld+json">
@@ -54,7 +57,11 @@
     </script>
     {% endblock %}
 
-    {% block hreflang %}{% endblock %}
+    {% block hreflang %}
+        <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all)|merge({'_locale': 'en'}))) }}">
+        <link rel="alternate" hreflang="pt-BR" href="{{ absolute_url(path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all)|merge({'_locale': 'pt_BR'}))) }}">
+        <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all)|merge({'_locale': 'en'}))) }}">
+    {% endblock %}
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">

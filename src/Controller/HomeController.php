@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\RelicRepository;
 use App\Repository\SaintRepository;
 use App\Service\LocationResolverService;
+use App\Service\StatisticsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ final class HomeController extends AbstractController
 {
     private const DEFAULT_RADIUS_KM = 45;
     #[Route('/', name: 'app_home')]
-    public function landing(SaintRepository $saintRepository): Response
+    public function landing(SaintRepository $saintRepository, StatisticsService $statisticsService): Response
     {
         $featuredSaints = $saintRepository->findFeatured();
 
@@ -36,6 +37,7 @@ final class HomeController extends AbstractController
             'featuredSaints' => $featuredSaints,
             'saintOfDay' => $saintOfDay,
             'otherSaints' => $otherSaints,
+            'stats' => $statisticsService->getLandingStatistics(),
         ]);
     }
 
